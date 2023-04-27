@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <title> 3D CAR DRIVING</title>
+        <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="//cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js" target="_blank"></script>
+        <script src="//unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js" target="_blank"></script>
+        <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js" crossorigin="anonymous"></script>
+        <script src="//cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js" target="_blank"></script>
+        <script src="./app.js"></script>
+    <body>
+        <a-scene id="car" background="color:lightblue">
+            <a-asset>
+                <a-asset-item id="city" src="./assets/low_poly_city/scene.gltf"></a-asset-item>
+                <a-asset-item id="wheel" src="./assets/steering_wheel/scene.gltf"></a-asset-item>
+            </a-asset>
+            <a-entity light="type:ambient;color:white;intensity:1"></a-entity>
+            <a-entity id="model1" gltf-model="#city" position="10 -2.63754 -135" rotation="0 90 0"></a-entity>
+            <a-box id="box1" position="-76.79446 -8.30764 -164.16795" material="height:400" color="red" geometry="height:50;depth:400;width:5" ></a-box>
+            <a-box id="box2" position="75.38341 -8.30764 -164.16795" material="height:400" color="red" geometry="height:50;depth:400;width:5" ></a-box>
+            <a-box id="box3" position="-0.33183 -7.8421 -359.48732" material="height:400" color="red" geometry="height:50;depth:5;width:200" ></a-box>
+            <a-box id="box4" position="-0.33183 -7.8421 31.16964" material="height:400" color="red" geometry="height:50;depth:5;width:200" ></a-box>
+
+            <a-entity id="control" movement-controls="speed:0.5" position="0 0 0" rotation="0 0 0" game>
+        <a-entity id = 'camera' camera position="0 0 0 " rotation="0 0 0" >
+            <a-entity id="model2" gltf-model="#wheel" position="10 -5 -10" scale="0.05 0.05 0.05"></a-entity>
+            <a-box id="accelerator" src="./assets/acc.png" color="grey" position="-5 -5 -10" rotation="0 0 0" scale="1 1 1"></a-box>
+            <a-box id="brake" src="./assets/break.png" color="grey" position="-10 -5 -10" rotation="0 0 0" scale="1 1 1"></a-box>
+            <a-entity ></a-entity>
+        </a-entity>
+    </a-entity>
+         </a-scene>
+    </body>
+</html>
